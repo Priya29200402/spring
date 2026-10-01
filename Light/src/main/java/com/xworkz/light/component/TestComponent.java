@@ -13,6 +13,6 @@ public class TestComponent {
     @RequestMapping("/submit")
     public String onSubmit() {
         System.out.println("Running onSubmit method");
-        return "test.jsp";
+        return "Test.jsp";
     }
 }

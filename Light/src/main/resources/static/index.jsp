@@ -1,9 +1,15 @@
-<html>
-<head>
-    <title>My Index Page</title>
-</head>
+html>
+<head></head>
 <body>
-    <h1>Testing Spring MVC</h1>
-   <a href="test.jsp">Test</a>
+<h1>Testing MVC</h1>
+<a href="Test.jsp">Test Page</a><br>
+<a href="Register.jsp">Register Page</a><br>
+<a href="Product.jsp">Product Page</a><br>
+<a href="Customer.jsp">Customer Page</a><br>
+<a href="Place.jsp">Place Page</a><br>
+<a href="Movie.jsp">Movie Page</a><br>
+<a href="Camera.jsp">Camera Page</a><br>
+<a href="Biscuit.jsp">Biscuits Page</a><br>
+<a href="Box.jsp">Box Page</a><br>
 </body>
 </html>
