@@ -1,6 +1,6 @@
 package com.xworkz.light.component;
 
-import com.xworkz.light.dto.CameraDTO;
+import com.xworkz.light.dto.CustomerDTO;
 import com.xworkz.light.service.CameraService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,30 +15,29 @@ import java.util.List;
 
 @Component
 @RequestMapping("/")
-public class CameraComponent {
+public class CustomerComponent {
 
     @Autowired
     private CameraService cameraService;
 
-    public CameraComponent(){
-        System.out.println("The CameraComponent is created");
+    public CustomerComponent(){
+        System.out.println("The CustomerComponent is created");
     }
 
-    @PostMapping("/camera")
-    public String camera( Model model,@Valid CameraDTO cameraDTO, BindingResult bindingResult) {
-        System.out.println("The CameraDTO: "+cameraDTO);
+    @PostMapping("/customer")
+    public String customer(Model model, @Valid CustomerDTO customerDTO, BindingResult bindingResult){
+        System.out.println("The customer is:"+customerDTO);
 
         if(bindingResult.hasErrors()){
-            System.out.println("There is validation error,please fix it");
+            System.out.println("There is error in validation, please fix it");
             List<ObjectError> errors = bindingResult.getAllErrors();
             model.addAttribute("validationErrors",errors);
-            model.addAttribute("cameraDTO",cameraDTO);
+            model.addAttribute("customerDTO",customerDTO);
         }else {
-            System.out.println("There is no validation error, will continue to execute the service");
+            System.out.println("There is no validation error, will continue to execute the service ");
         }
 
-        model.addAttribute("cameraMessage","The camera is created");
-        return "Camera.jsp";
+        model.addAttribute("customerMessage","The customer is created successfully");
+        return "Customer.jsp";
     }
-
 }
